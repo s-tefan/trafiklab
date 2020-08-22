@@ -41,6 +41,26 @@ for a in stoplocation:
 payload_test_db["id"] = "740000008"
 
 rr = requests.get(urls["departureboard"], params = payload_test_db)
-print(rr.json())
+#print(rr.json())
 for apa in rr.json()["Departure"]:
-    print(apa["name"], apa["time"])
+    #print(apa)
+    print("{:<30} avg. {:<8} mot {:<30}".format(apa["name"], apa["time"], apa["direction"]))
+    stop = apa["Stops"]["Stop"]
+    #print(stop[1])
+    for st in stop:
+        try:
+            arrTime = st["arrTime"]
+            name = st["name"]
+            print(" ank. {:<8} {:<30}".format(arrTime, name))
+        except:
+            pass
+        try:
+            depTime = st["depTime"]
+            name = st["name"]
+            print(" avg. {:<8} {:<30}".format(depTime, name))
+        except:
+            pass
+
+
+
+
