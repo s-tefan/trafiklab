@@ -1,6 +1,13 @@
 import requests
+import json
 
-
+''' 
+A json file with api-keys is needed in the working directory:
+{"apikey_resrobot_stt" : <key ResRobot - Stolptidtabeller 2>,
+"apikey_resrobot_rp" : <key ResRobot - Reseplanerare>}
+'''
+with open("api_keys.json") as keyfile:
+    api_keys = json.load(keyfile)
 
 urls = {
     "nearbystops" : "https://api.resrobot.se/v2/location.nearbystops",
@@ -8,7 +15,7 @@ urls = {
 }
 
 payload_test = {
-    "key" : apikey_resrobot_rp,
+    "key" : api_keys["apikey_resrobot_rp"],
     "originCoordLat" : 58.387,
     "originCoordLong" : 13.871,
     "format" : "json"
@@ -17,7 +24,7 @@ payload_test = {
 payload_test["originCoordLat"] =  58.389216
 payload_test["originCoordLong"] = 13.851925
 payload_test_db = {
-    "key" : apikey_resrobot_stt,
+    "key" : api_keys["apikey_resrobot_stt"],
     "id" : 0,
     "maxJourneys" : 50,
     "format" : "json"
