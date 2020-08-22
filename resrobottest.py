@@ -1,7 +1,6 @@
 import requests
 
-apikey_resrobot_stt = "093f4e3c-ae12-4109-9265-3e596f3161f8"
-apikey_resrobot_rp = "1ce32405-db7a-4a4d-9a45-7e3a04dd916e"
+
 
 urls = {
     "nearbystops" : "https://api.resrobot.se/v2/location.nearbystops",
