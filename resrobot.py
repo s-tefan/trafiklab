@@ -1,8 +1,7 @@
 import requests
 import json
 import xml.etree.ElementTree as ET
-#får man skriva KUKEN här?
-#nä?
+
 '''
 ######### ######### ######### ######### ######### ######### ######### 72
 '''
