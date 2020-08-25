@@ -1,7 +1,8 @@
 import requests
 import json
-import xml.etree.ElementTree as ET
-# 72
+'''
+######### ######### ######### ######### ######### ######### ######### 72
+'''
 ''' 
 A json file with api-keys is needed in the working directory:
 {"apikey_resrobot_stt" : <key ResRobot - Stolptidtabeller 2>,
