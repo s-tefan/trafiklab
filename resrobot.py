@@ -88,14 +88,14 @@ def print_trip_xml(params):
             'XML root is not TripList but {}.'.format(triplist.tag))
     for trip in triplist:
         if trip.tag != tag_Trip:
-            raise TypeError('XML root is not Trip but {}.'.format(trip.tag))
+            raise TypeError('XML root tag is not Trip but {}.'.format(trip.tag))
         print("Alternativ {}:".format(
             int(trip.attrib["idx"]) + 1
         ))
         for leglist in trip:
             for leg in leglist:
                 if leg.tag != tag_Leg:
-                    raise TypeError('XML root is not Trip but {}.'.format(trip.tag))
+                    raise TypeError('XML tag is not Leg but {}.'.format(trip.tag))
                 idx = leg.attrib["idx"]
                 name = leg.attrib["name"]
                 orig = leg.find(tag_Origin)
